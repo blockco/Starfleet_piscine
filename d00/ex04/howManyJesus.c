@@ -13,13 +13,13 @@ int howManyJesus(char *bible, char *jesus)
 	int i, j;
 	int p = 0;
 	int t = 0;
-	int h = 0;
-	int q = 101;
+	int h = 1;
+	int q = 31;
 
 	i = 0;
-	while (i < M - 1)
+	while (i < (M - 1))
 	{
-		h = (int)pow(d, M - 1) % q;
+		 h = (h * d) % q;
 		i++;
 	}
 	i = 0;
@@ -38,13 +38,13 @@ int howManyJesus(char *bible, char *jesus)
 			while (j < M)
 			{
 				if (bible[i + j] != jesus[j])
-				{
 					break;
-				}
 				j++;
 			}
 			if (j == M)
+			{
 				count++;
+			}
 		}
 		if (i < (N - M))
 		{
