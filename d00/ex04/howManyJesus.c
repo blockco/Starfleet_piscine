@@ -19,7 +19,7 @@ int howManyJesus(char *bible, char *jesus)
 	i = 0;
 	while (i < (M - 1))
 	{
-		 h = (h * d) % q;
+		h = (h * d) % q;
 		i++;
 	}
 	i = 0;
