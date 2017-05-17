@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <strings.h>
-struct s_stack *stackInit(void)
+
+struct s_stack *initStack()
 {
 	struct s_stack *ret;
 
@@ -33,13 +34,40 @@ int pop(struct s_stack *stack)
 char *console(void)
 {
 	char *input;
+	struct s_stack *stack;
+	char ret[250];
+	int cur;
+
 
 	input = malloc(251);
-	bzero(input, 250);
+	stack = initStack();
+	// stack = NULL;
+	cur = 0;
 	while (1)
 	{
+		bzero(input, 250);
 		printf("%s", "?: ");
-		scanf("%s", input);
-		printf("%s\n", input);
+		// scanf("%s", input);
+		fgets(input, 250, stdin);
+		// printf("\n");
+		input[strlen(input) - 1] = 0;
+		if (strcmp(input, "UNDO") == 0)
+		{
+			if (stack->item)
+				cur = pop(stack);
+			bzero(ret + cur, 250 - cur);
+		}
+		else if (strcmp("SEND", input) == 0)
+			break;
+		else
+		{
+			push(stack, cur);
+			memmove(ret + cur, input, strlen(input));
+			cur += strlen(input);
+		}
+		printf("%s\n", ret);
 	}
+	return strdup(ret);
+	// printf("%s\n", "here");
+	// return NULL;
 }
