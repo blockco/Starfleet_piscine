@@ -13,6 +13,13 @@
 /*--------------------------------
   :) function you must implement
   --------------------------------*/
+  struct s_hold
+  {
+	int num;
+	struct s_stone *begin;
+	struct s_stone *end;
+	struct s_hold *next;
+  };
 //stone is a pointer to the first
 void sortStones(struct s_stone **stone);
 

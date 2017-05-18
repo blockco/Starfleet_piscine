@@ -12,12 +12,12 @@ int main(void)
 
 	stone = genRandomStoneList(30); //if param == 0, the length of the list will be between 1 and 1 million
 
-	printStone(stone);
+	// printStone(stone);
 	/*-------------------
 	launch your test here
 	--------------------*/
-	//sortStones(&stone);
-	//printStone(stone);
+	printStone(stone);
+	sortStones(&stone);
 
 	return (0);
 }
