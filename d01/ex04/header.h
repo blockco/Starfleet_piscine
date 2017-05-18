@@ -36,7 +36,7 @@ int isEmpty(struct s_queue *queue);
 
 
 /*--------------------------------
-  ?? test function used in main 
+  ?? test function used in main
   --------------------------------*/
 
 /*--------------------------------
