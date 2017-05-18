@@ -1,2 +1,2 @@
+time complexity: O(n)
 space complexity: O(n)
-speed complexity: O(n^2)
