@@ -1,5 +1,6 @@
 #include "header.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 int findmax(struct s_node *root)
 {
@@ -70,6 +71,34 @@ int findheight(struct s_node *root)
 	}
 }
 
+int isbal(struct s_node *root)
+{
+	int lh;
+	int rh;
+
+	if (!root)
+		return 1;
+	lh = findheight(root->left);
+	rh = findheight(root->right);
+	if (abs(rh - lh) <= 1 && isbal(root->left) && isbal(root->right))
+		return 1;
+	return 0;
+}
+
+int isBST(struct s_node *root)
+{
+
+	if (root == NULL)
+		return 1;
+	if (root->left && findmax(root->left) > root->value)
+		return 0;
+	if (root->right && findmin(root->right) < root->value)
+		return 0;
+	if (!isBST(root->left) || !isBST(root->right))
+		return 0;
+	return 1;
+}
+
 struct s_info getInfo(struct s_node *root)
 {
 	struct s_info ret;
@@ -78,8 +107,8 @@ struct s_info getInfo(struct s_node *root)
 	ret.min = findmin(root);
 	ret.elements = findelemets(root);
 	ret.height = findheight(root);
-	ret.isBalanced = 0;
-	ret.isBST = 0;
+	ret.isBalanced = isbal(root);
+	ret.isBST = isBST(root);
 
 	return ret;
 }
