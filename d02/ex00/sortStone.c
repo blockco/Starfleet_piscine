@@ -43,6 +43,7 @@ void sortStones(struct s_stone **stone)
 	{
 		h_sort = head_hold;
 		while(h_sort)
+
 		{
 			last = h_sort;
 			if (last->next && (last->num > last->next->num))
