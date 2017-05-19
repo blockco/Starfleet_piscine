@@ -26,6 +26,7 @@ void util(struct s_node *root, int i)
 struct s_node *findParent(struct s_node *root, char *firstSpecies, char *secondSpecies)
 {
 	struct s_node *temp;
+	struct s_node *res;
 	int count;
 	int i;
 
@@ -36,7 +37,7 @@ struct s_node *findParent(struct s_node *root, char *firstSpecies, char *secondS
 	i = 0;
 	while (root->children[i])
 	{
-		struct s_node *res = findParent(root->children[i], firstSpecies, secondSpecies);
+		res = findParent(root->children[i], firstSpecies, secondSpecies);
 		if (res)
 		{
 			count++;
