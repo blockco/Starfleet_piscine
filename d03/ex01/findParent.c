@@ -4,7 +4,8 @@
 void util(struct s_node *root, int i)
 {
 	int c;
-	printf("%s\n", root->name);
+	// printf("%s\n", root->name);
+	i++;
 	c = 0;
 	while(root->children[c])
 	{
@@ -15,15 +16,15 @@ void util(struct s_node *root, int i)
 			printf("\t");
 		}
 		printf("%s\n", root->children[c]->name);
-		i++;
-		c++;
-	}
-	c = 0;
-	while (root->children[c])
-	{
 		util(root->children[c], i);
 		c++;
 	}
+	// c = 0;
+	// while (root->children[c])
+	// {
+	//
+	// 	c++;
+	// }
 }
 
 struct s_node *findParent(struct s_node *root, char *firstSpecies, char *secondSpecies)
