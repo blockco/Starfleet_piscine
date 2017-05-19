@@ -1,5 +1,6 @@
 #include "header.h"
 #include <stdio.h>
+#include <strings.h>
 
 void util(struct s_node *root, int i)
 {
@@ -24,8 +25,26 @@ void util(struct s_node *root, int i)
 
 struct s_node *findParent(struct s_node *root, char *firstSpecies, char *secondSpecies)
 {
-	util(root, 0);
-	firstSpecies = NULL;
-	secondSpecies = NULL;
-	return NULL;
+	struct s_node *temp;
+	int count;
+	int i;
+
+	if ((strcmp(root->name, firstSpecies) == 0) || (strcmp(root->name, secondSpecies) == 0))
+		return root;
+	count = 0;
+	temp = NULL;
+	i = 0;
+	while (root->children[i])
+	{
+		struct s_node *res = findParent(root->children[i], firstSpecies, secondSpecies);
+		if (res)
+		{
+			count++;
+			temp = res;
+		}
+		i++;
+	}
+	if (count == 2)
+		return root;
+	return temp;
 }

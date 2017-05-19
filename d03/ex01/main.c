@@ -18,9 +18,10 @@ int main(void)
         launch your test here
         --------------------*/
 	// printf("%s\n", "here");
-	node = findParent(root, "Dinosauria", "Homo sapiens");
-	// if (node)
-	// 	printf("%s\n", node->name);
+	// node = findParent(root, "Dinosauria", "Homo sapiens");
+	node = findParent(root, "Lynx", "Marsupialia");
+	if (node)
+		printf("%s\n", node->name);
 
 	return (0);
 }
