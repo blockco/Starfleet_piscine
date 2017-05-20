@@ -73,7 +73,7 @@ void saveTheSequoia(struct s_node **root)
 	largest = *root;
 	if ((*root)->left && (*root)->left->value > largest->value)
 		largest = (*root)->left;
-	if ((*root)->left && (*root)->right->value > largest->value)
+	if ((*root)->right && (*root)->right->value > largest->value)
 		largest = (*root)->right;
 	if (largest != *root)
 	{
