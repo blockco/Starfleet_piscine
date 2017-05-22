@@ -4,7 +4,7 @@
 
 int toInt(char *bits)
 {
-	int i = 5;
+	int i = strlen(bits) - 1;
 	int mult;
 	int ret = 0;
 
