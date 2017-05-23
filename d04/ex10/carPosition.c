@@ -3,8 +3,9 @@
 int carPosition(unsigned int parkingRow)
 {
 	int ret = -1;
-
-	while (parkingRow)
+	if (parkingRow & (parkingRow - 1))
+		return ret;
+	while (parkingRow & -parkingRow)
 	{
 		parkingRow >>= 1;
 		ret++;
