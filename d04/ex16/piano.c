@@ -12,7 +12,6 @@ int **pianoDecompress(struct s_bit *bit, int l)
 	while (i < bit->n)
 	{
 		ret[i] = (int*)calloc(sizeof(int), l);
-		// printf("%d\n", bit->arr[i]);
 		ret[i][(int)log2(bit->arr[i])] = 1;
 		i++;
 	}
