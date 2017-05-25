@@ -26,7 +26,7 @@ int main(int ac, char **av)
 	/*-------------------
 	launch your test here
 	--------------------*/
-	//printf("%lf\n", probaDistance(dist, arr, n));
+	printf("%lf\n", probaDistance(dist, arr, n));
 
 	return (0);
 }
@@ -35,4 +35,3 @@ int main(int ac, char **av)
 
 // Function used for the test
 // Don't go further :)
-
