@@ -15,7 +15,7 @@ struct s_hotspot {
 int selectHotspots(struct s_hotspot **hotspots);
 
 /*--------------------------------
-  ?? test function used in main 
+  ?? test function used in main
   --------------------------------*/
 struct s_hotspot **readHotspots(char *filename);
 
